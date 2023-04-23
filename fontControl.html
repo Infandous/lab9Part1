@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="UTF-8">
+		<h1>Lab 7: Font control</h1>
+<style><!--inline css-->
+	#dummyText{
+		color:black;
+		border: 2px solid black;
+	}
+</style>
+	</head>
+	<body>
+		<p id='dummyText'>
+		Va' pensiero, sull'ali dorate<br>
+		Va', ti posa sui clivi, sui colli<br>
+		Ove olezzano trepide e molli<br>
+		L'aure dolci del suolo natal<br><br>
+
+		Del Giordano le rive saluta<br>
+		Di Sionne le torri atterrate<br>
+		Oh mia patria, sì bella e perduta<br>
+		Oh, membranza sì cara e fatal<br><br>
+
+		Arpa d'or dei fatidici vati<br>
+		Perché muta dal salice pendi?<br>
+		Le memorie nel petto raccendi<br>
+		Ci favella del tempo che fu<br><br>
+
+		O t'ispiri, il Signore un concento<br>
+		Che ne infonda al patire virtù<br>
+		Che ne infonda al patire virtù<br>
+		Che ne infonda al patire virtù<br>
+		Al patire virtù<br>
+		</p>
+
+		<form>
+			text color: <input type="text" name="text" id="textColor">
+			border color: <input type="text" name="border" id="borderColor">
+		</form>
+
+		<script><!--inline js to handle changing colors-->
+			const colorText = document.getElementById('textColor');
+			const colorBorder = document.getElementById('borderColor');
+			const dummyText = document.getElementById('dummyText');
+
+			colorText.addEventListener('input', (event) =>{
+							const color = event.target.value;
+							if ((color=="blue")||(color=="red")||(color=="green")){
+								dummyText.style.color = color
+							}
+
+
+			})
+
+			colorBorder.addEventListener('input',(event) =>{
+							const color = event.target.value;
+							if ((color=="red")||(color=="blue")||(color=="green")){
+								dummyText.style.borderColor = color;
+							}
+			})
+		</script>
+	</body>
+
+</html>
